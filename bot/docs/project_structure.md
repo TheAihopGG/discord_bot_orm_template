@@ -4,6 +4,10 @@
 
   The package is the main.
 
+- `/bot/assets`
+
+  The directory contains images, fonts, medias, ect.
+
 - `/bot/cogs`
 
   The package contains cog files.
