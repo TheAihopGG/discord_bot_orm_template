@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ENV_FILENAME = BASE_DIR / ".env"
 
-assert load_dotenv(ENV_FILENAME), f"path ENV_FILENAME' is not exists"
+assert load_dotenv(ENV_FILENAME), f"path ENV_FILENAME is not exists"
 
 IS_DEV_MODE = True
 
