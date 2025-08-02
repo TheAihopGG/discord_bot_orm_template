@@ -16,6 +16,7 @@ Hello! This template suggests a python bot design with using SQLAlchemy for acce
 ### Other tools
 
 - Alembic
+- uv
 
 ## Author
 
