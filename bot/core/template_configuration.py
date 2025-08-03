@@ -4,23 +4,27 @@ The bot configuration template
 You can find full configuration documentation at `./bot/docs/project_configuration.md.`
 """
 
+import logging
 from os import getenv
-from typing import Literal
+from typing import Literal, Sequence
 from pathlib import Path
 from dotenv import load_dotenv
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ENV_FILENAME = BASE_DIR / ".env"
 
-assert load_dotenv(ENV_FILENAME), f"path ENV_FILENAME' is not exists"
+assert load_dotenv(ENV_FILENAME), f"path ENV_FILENAME is not exists"
 
-DEV = True
+IS_DEV_MODE = True
 
-LOGGING_FILENAME = BASE_DIR / "logs/logs.log"
-LOGGING_FILEMODE: Literal["w", "a"] = "w"
+LOGGING_FILENAME: Path
+LOGGING_FILEMODE: Literal["w", "a"]
+LOGGING_LEVEL: Literal[10, 20, 30, 40, 50]
+LOGGING_FORMAT: str = "%(asctime)s [%(levelname)s] %(message)s"
+LOGGING_DATETIME_FORMAT: str = "%Y-%m-%d %H:%M:%S"
 
-PROD_DATABASE_FILENAME = BASE_DIR / "product_sqlite3.db"
-DEV_DATABASE_FILENAME = BASE_DIR / "dev_sqlite3.db"
-SQLALCHEMY_URL = f"sqlite:///{DEV_DATABASE_FILENAME if DEV else PROD_DATABASE_FILENAME}"
+PROD_SQLALCHEMY_URL = f"aiosqlite+sqlite:///./bot/databases/prod_database.db"
+DEV_SQLALCHEMY_URL = f"aiosqlite+sqlite:///./bot/databases/dev_database.db"
 
 BOT_TOKEN = getenv("BOT_TOKEN")
