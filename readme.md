@@ -8,7 +8,7 @@ Hello! This template suggests a python bot design with using SQLAlchemy for acce
 
 - Python3
 
-### Frameworks & Libaries
+### Frameworks & Libraries
 
 - SQLAchemy
 - Disnake
@@ -18,7 +18,7 @@ Hello! This template suggests a python bot design with using SQLAlchemy for acce
 - Alembic
 - uv
 
-## Author
+## Authors
 
 - [@TheAihopGG](https://github.com/TheAihopGG)
 
